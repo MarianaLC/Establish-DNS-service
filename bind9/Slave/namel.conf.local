@@ -1,0 +1,13 @@
+//Forward Zone
+	zone "MieBiom-g2.gcom.di.uminho.pt" IN { //Domain name
+	type slave; //Secondary Slave dns
+	file "forward.MieBiom-g2.gcom.di.uminho.pt"; //Forward Zone Cache file
+	masters { 192.168.1.80; }; //Master Server IP
+};
+
+//Reverse Zone
+zone "1.168.192.in-addr.arpa" IN {
+	type slave; // Secondary/Slave dns
+	file "reverse.MieBiom-g2.gcom.di.uminho.pt"; //Reverse Zone Cache file
+	masters { 192.168.1.80; }; //Master Server IP
+};

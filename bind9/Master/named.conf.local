@@ -1,0 +1,17 @@
+// Forward Mode
+zone "MieBiom-g2.gcom.di.uminho.pt" IN {
+	type master;
+	file "/etc/bind/forward.MieBiom-g2.gcom.di.uminho.pt";
+	allow-update { none; };
+	allow-transfer { 192.168.1.2; };
+	also-notify { 192.168.1.2; };
+};
+
+// Reverse mode
+zone "1.168.192.in-addr.arpa" IN {
+	type master;
+	file "/etc/bind/reverse.MieBiom-g2.gcom.di.uminho.pt";
+	allow-update { none; };
+	allow-transfer { 192.168.1.2; };
+	also-notify { 192.168.1.2; };
+};

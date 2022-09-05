@@ -1,0 +1,30 @@
+$TTL 604800
+@ IN SOA ns1.MieBiom-g2.gcom.di.uminho.pt. root.MieBiom-g2.gcom.di.uminho.pt. (
+	3 ; Serial
+	604800 ; Refresh
+	86400 ; Retry
+	2419200 ; Expire
+	604800 ) ; Negative Cache TTL
+
+;--- Name Server Information
+@ IN NS ns1.MieBiom-g2.gcom.di.uminho.pt.
+@ IN NS ns2.MieBiom-g2.gcom.di.uminho.pt.
+
+;--- IP address of Name Server
+ns1 IN A 192.168.1.80
+ns2 IN A 192.168.18.2
+
+; IPv6 addresses of named servers
+ns1 IN AAAA fe80::f48f:55c6:cba5:4b44
+ns2 IN AAAA fe80::bc05:bbd7:55ae:7382
+
+;--- Mail Exchanger ( if exists )
+MieBiom-g2.gcom.di.uminho.pt. IN MX 10 mx1.
+
+;--- A - Record HostName To Ip Address
+apps1 IN A 192.168.1.14
+mx1 IN A 192.168.1.15
+
+;--- CNAME record
+www IN CNAME apps1.MieBiom-g2.gcom.di.uminho.pt.
+ftp IN CNAME apps1.MieBiom-g2.gcom.di.uminho.pt.
